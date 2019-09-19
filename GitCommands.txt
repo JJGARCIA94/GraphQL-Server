@@ -1,0 +1,17 @@
+git init: inicia proyecto nuevo.
+git status: para ver el estadi de nuestros archivos.
+git add <nombre de archivo>: para agregar un archivo al staging area.
+git add .: para agregar todos los archivos al staging area.
+got commit -m "<mensaje>": para crear un punto de control de nuestro código.
+git log: para ver todos los commits que hemos creado.
+git checkout -- <nombre de archivo>: para revertir los cambios del archivo.
+git diff <nombre de archivo>: para ver las diferencias hechas en el archivo.
+git branch: para ver las ramas.
+git branch <nombre>: para crear una rama.
+git checkout <nombre de rama>: para cambiar de rama.
+Para identificarse en git:
+git config --global user.email "<email>": para configurar el email del usuario.
+git config --global user.name "<usuario>": para configurar el nombre de usuario.
+para subir a repositorio:
+git remote add <nombre> <url de repositorio>: agrega la dirección del repositorio.
+git push -u <nombre> master: sube los archivos al repositorio del nombre que se ponga.
