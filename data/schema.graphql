@@ -1,0 +1,34 @@
+type Client {
+    id: ID
+    firstName: String
+    lastName: String
+    work: String
+    emails: [EmailInput]
+    age: Int
+    type: String
+    orders: [OrderInput]
+}
+input ClientInput {
+    id: ID
+    firstName: String
+    lastName: String
+    work: String
+    emails: [EmailInput]
+    age: Int
+    type: String
+    orders: [OrderInput]
+}
+input EmailInput {
+    email: String
+}
+input OrderInput {
+    description : String
+}
+type Query {
+    getClient(id: ID!): Client
+}
+type Mutation {
+    createClient(input: ClientInput) : Client
+    updateClient(input: ClientInput) : Client
+    deleteClient(id: ID!): String
+}
