@@ -4,8 +4,20 @@ import { rejects } from 'assert';
 
 export const resolvers = {
     Query: {
-        getClient : ({ id }) => {
-            return new Client(id, clientsDB[id])
+        getClients: (root, { limit }) => {
+            return Clients.find({}).limit(limit);
+        },
+        getClient : (root, { id }) => {
+            return new Promise((resolve, object) => {
+                Clients.findById(id, (error, client) => {
+                    if(error){
+                        rejects(error);
+                    }
+                    else{
+                        resolve(client);
+                    }
+                });
+            });
         }
     },
     Mutation: {

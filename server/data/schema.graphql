@@ -3,10 +3,20 @@ type Client {
     firstName: String
     lastName: String
     work: String
-    emails: [EmailInput]
+    emails: [Email]
     age: Int
-    type: String
-    orders: [OrderInput]
+    type: ClientType
+    orders: [Order]
+}
+type Email {
+    email: String
+}
+type Order {
+    description : String
+}
+enum ClientType {
+    BASIC
+    PREMIUM
 }
 input ClientInput {
     id: ID
@@ -26,6 +36,7 @@ input OrderInput {
 }
 type Query {
     getClient(id: ID!): Client
+    getClients(limit: Int): [Client]
 }
 type Mutation {
     createClient(input: ClientInput) : Client
