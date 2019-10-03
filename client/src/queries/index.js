@@ -8,3 +8,13 @@ export const CLIENTS_QUERY = gpl`{
         work
     }
 }`;
+
+export const CLIENT_QUERY = gpl`
+    query SearchClient($id: ID!){
+        getClient(id: $id){
+          firstName
+          lastName
+          work
+          age
+        }
+}`;

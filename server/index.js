@@ -8,6 +8,6 @@ const server = new ApolloServer({ typeDefs, resolvers });
 
 server.applyMiddleware({ app });
 
-app.listen({ port: 8000 }, () => {
+app.listen({ port: 9000 }, () => {
     console.log(`Server on port ${ server.graphqlPath }`);
 });
